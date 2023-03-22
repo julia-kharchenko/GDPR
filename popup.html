@@ -16,14 +16,14 @@
     <h2>Використання кукі</h2>
     <p>Цей веб-сайт використовує такі права користувача:</p>
     <ul>
-        <li><input type="checkbox">Право на інформацію</li>
-        <li><input type="checkbox">Право на доступ</li>
-        <li><input type="checkbox">Право на виправлення</li>
-        <li><input type="checkbox">Право на видалення</li>
-        <li><input type="checkbox">Право на обмеження обробки</li>
-        <li><input type="checkbox">Право на портабельність даних</li>
-        <li><input type="checkbox">Право на скаргу</li>
-        <li><input type="checkbox">Право на відмову від обробки</li>
+        <li><input type="checkbox" name="accept">Право на інформацію</li>
+        <li><input type="checkbox" name="accept">Право на доступ</li>
+        <li><input type="checkbox" name="accept">Право на виправлення</li>
+        <li><input type="checkbox" name="accept">Право на видалення</li>
+        <li><input type="checkbox" name="accept">Право на обмеження обробки</li>
+        <li><input type="checkbox" name="accept">Право на портабельність даних</li>
+        <li><input type="checkbox" name="accept">Право на скаргу</li>
+        <li><input type="checkbox" name="accept">Право на відмову від обробки</li>
     </ul>
     <p>Натисність кнопку "Погодитись", щоб продовжити роботу з сайтом.</p>
     <button id="agree">Погодитись</button>
@@ -104,8 +104,11 @@
     })
     document.getElementById("disagree").addEventListener('click', function () {
         document.getElementById("privacy-popup").style.display = "none";
+        document.getElementsByName("accept").forEach(check);
     })
-
+    function check(item) {
+        item.checked = false;
+    }
 </script>
 </body>
 </html>
